@@ -21,10 +21,10 @@
     <string name="hint_genre">Жанр</string>
 
     <string name="error_title_common">Обнаружены ошибки</string>
-    <string name="error_title">Название не должно быть пустым</string>
-    <string name="error_author">Автор не должен быть пустым</string>
-    <string name="error_genre">Жанр не должен быть пустым</string>
+    <string name="error_title">Название: Недопустимое значение</string>
+    <string name="error_author">Автор: Недопустимое значение</string>
+    <string name="error_genre">Жанр: Недопустимое значение</string>
     <string name="error_year">Год должен быть числом в диапазоне 1564-2025</string>
-    <string name="error_pages">Количество страниц должно быть положительным числом</string>
+    <string name="error_pages">Кол-во страниц: Недопустимое значение</string>
     <string name="error_price">Цена должна быть неотрицательным числом</string>
 </resources>
