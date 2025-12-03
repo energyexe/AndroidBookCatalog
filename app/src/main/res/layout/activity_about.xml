@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="6dp"
-        android:text="Курсовая на тему:\n Создание мобильных приложения под OC Android\nВыполнил:\nСтудент группы ИВТ-21-24\nХмелев Никита Сергеевич\n\nКаталог книг\nВерсия 1.0.1\n(В процессе доработки, для курсовой готово, я думаю 0_0)\n\nАвтор: energy.exe"
+        android:text="Курсовая на тему:\n Создание мобильных приложений под OC Android\nВыполнил:\nСтудент группы ИВТ-21-24\nХмелев Никита Сергеевич\n\nКаталог книг\nВерсия 1.0.1\n(В процессе доработки, для курсовой готово, я думаю 0_0)\n\nАвтор: energy.exe"
         android:textAlignment="center"
         android:textSize="18sp" />
 
