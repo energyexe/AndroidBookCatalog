@@ -1,0 +1,5 @@
+com.example.bookcatalog.test.app-core-1.6.1-0 C:\Users\nikki\.gradle\caches\8.10.2\transforms\8d066ed7d3a1797fdceca6e137b69371\transformed\core-1.6.1\res
+com.example.bookcatalog.test.app-androidTest-1 C:\Users\nikki\AndroidStudioProjects\AndroidBookCatalog\app\build\generated\res\resValues\androidTest\debug
+com.example.bookcatalog.test.app-mergeDebugAndroidTestResources-2 C:\Users\nikki\AndroidStudioProjects\AndroidBookCatalog\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.bookcatalog.test.app-mergeDebugAndroidTestResources-3 C:\Users\nikki\AndroidStudioProjects\AndroidBookCatalog\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.bookcatalog.test.app-debugAndroidTest-4 C:\Users\nikki\AndroidStudioProjects\AndroidBookCatalog\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

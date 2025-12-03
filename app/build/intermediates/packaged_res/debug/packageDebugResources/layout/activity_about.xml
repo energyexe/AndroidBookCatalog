@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="6dp"
+        android:text="Курсовая на тему:\n Создание мобильных приложения под OC Android\nВыполнил:\nСтудент группы ИВТ-21-24\nХмелев Никита Сергеевич\n\nКаталог книг\nВерсия 1.0.1\n(В процессе доработки, для курсовой готово, я думаю 0_0)\n\nАвтор: energy.exe"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+</LinearLayout>

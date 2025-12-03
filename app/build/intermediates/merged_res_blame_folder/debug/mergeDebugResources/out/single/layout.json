@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-mergeDebugResources-31:\\layout\\dialog_edit_book.xml",
+        "source": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-main-34:\\layout\\dialog_edit_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-mergeDebugResources-31:\\layout\\item_book.xml",
+        "source": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-main-34:\\layout\\item_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-mergeDebugResources-31:\\layout\\dialog_add_book.xml",
+        "source": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-main-34:\\layout\\dialog_add_book.xml"
+    },
+    {
+        "merged": "com.example.bookcatalog.app-mergeDebugResources-31:/layout/activity_about.xml",
+        "source": "com.example.bookcatalog.app-main-34:/layout/activity_about.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\nikki\\.gradle\\daemon\\8.10.2\\com.example.bookcatalog.app-main-34:\\layout\\activity_main.xml"
+    }
+]

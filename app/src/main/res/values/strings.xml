@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Каталог книг</string>
+    <string name="search_hint">Поиск по всем полям</string>
+
+    <string name="action_search">Поиск</string>
+    <string name="action_sort_title">Сортировать по названию</string>
+    <string name="action_sort_author">Сортировать по автору</string>
+    <string name="action_sort_year">Сортировать по году</string>
+    <string name="action_sort_price">Сортировать по цене</string>
+    <string name="action_exit">Выход</string>
+
+    <string name="add_book">Добавление книги</string>
+    <string name="save">Сохранить</string>
+
+    <string name="hint_title">Название</string>
+    <string name="hint_author">Автор</string>
+    <string name="hint_year">Год</string>
+    <string name="hint_pages">Страницы</string>
+    <string name="hint_price">Цена</string>
+    <string name="hint_genre">Жанр</string>
+
+    <string name="error_title_common">Обнаружены ошибки</string>
+    <string name="error_title">Название не должно быть пустым</string>
+    <string name="error_author">Автор не должен быть пустым</string>
+    <string name="error_genre">Жанр не должен быть пустым</string>
+    <string name="error_year">Год должен быть числом в диапазоне 1564-2025</string>
+    <string name="error_pages">Количество страниц должно быть положительным числом</string>
+    <string name="error_price">Цена должна быть неотрицательным числом</string>
+</resources>

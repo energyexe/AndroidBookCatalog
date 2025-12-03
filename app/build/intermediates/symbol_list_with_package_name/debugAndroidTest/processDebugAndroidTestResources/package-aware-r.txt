@@ -1,0 +1,3 @@
+com.example.bookcatalog.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

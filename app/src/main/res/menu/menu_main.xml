@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_sort_title"
+        android:title="@string/action_sort_title"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sort_author"
+        android:title="@string/action_sort_author"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sort_year"
+        android:title="@string/action_sort_year"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sort_price"
+        android:title="@string/action_sort_price"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_export"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Экспортировать"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="О программе"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:title="@string/action_exit"
+        app:showAsAction="never" />
+</menu>
