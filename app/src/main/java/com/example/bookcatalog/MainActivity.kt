@@ -147,6 +147,14 @@ class MainActivity : AppCompatActivity() {
         filterBooks(currentQuery)
     }
 
+    private fun isValidText(input: String): Boolean {
+        val emojiRegex = "[\\p{So}\\p{Cn}]".toRegex()
+        return !emojiRegex.containsMatchIn(input)
+    }
+    private fun isValidGenre(input: String): Boolean {
+        return input.none { it.isDigit() }
+    }
+
     private fun showAddDialog() {
         val dialogView = layoutInflater.inflate(R.layout.dialog_add_book, null)
         val titleInput = dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.inputTitle)
@@ -181,10 +189,14 @@ class MainActivity : AppCompatActivity() {
                     errorMessages.add(getString(R.string.error_price))
                     null
                 }
+                if (title.isBlank() || !isValidText(title))
+                    errorMessages.add(getString(R.string.error_title))
 
-                if (title.isBlank()) errorMessages.add(getString(R.string.error_title))
-                if (author.isBlank()) errorMessages.add(getString(R.string.error_author))
-                if (genre.isBlank()) errorMessages.add(getString(R.string.error_genre))
+                if (author.isBlank() || !isValidText(author))
+                    errorMessages.add(getString(R.string.error_author))
+
+                if (genre.isBlank() || !isValidText(genre) || !isValidGenre(genre))
+                    errorMessages.add(getString(R.string.error_genre))
 
                 if (errorMessages.isNotEmpty() || year == null || pages == null || price == null) {
                     AlertDialog.Builder(this)
@@ -260,10 +272,12 @@ class MainActivity : AppCompatActivity() {
                     errorMessages.add(getString(R.string.error_price))
                     null
                 }
-
-                if (title.isBlank()) errorMessages.add(getString(R.string.error_title))
-                if (author.isBlank()) errorMessages.add(getString(R.string.error_author))
-                if (genre.isBlank()) errorMessages.add(getString(R.string.error_genre))
+                if (title.isBlank() || !isValidText(title))
+                    errorMessages.add(getString(R.string.error_title))
+                if (author.isBlank() || !isValidText(author))
+                    errorMessages.add(getString(R.string.error_author))
+                if (genre.isBlank() || !isValidText(genre) || !isValidGenre(genre))
+                    errorMessages.add(getString(R.string.error_genre))
 
                 if (errorMessages.isNotEmpty() || year == null || pages == null || price == null) {
                     AlertDialog.Builder(this)
