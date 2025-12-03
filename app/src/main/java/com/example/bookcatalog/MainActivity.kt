@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.itemAnimator?.apply { // анимация
+        binding.recyclerView.itemAnimator?.apply {
             addDuration = 200      // появление
             removeDuration = 200   // удаление
             changeDuration = 150   // обновление элемента
@@ -234,26 +234,62 @@ class MainActivity : AppCompatActivity() {
         pagesInput.setText(book.pages.toString())
         priceInput.setText(book.price.toString())
 
-        val dialog = AlertDialog.Builder(this)
+        AlertDialog.Builder(this)
             .setTitle("Редактировать книгу")
             .setView(dialogView)
-            .setPositiveButton("Сохранить") { _, _ ->
-                val updated = book.copy(
-                    title = titleInput.text.toString(),
-                    author = authorInput.text.toString(),
-                    genre = genreInput.text.toString(),
-                    year = yearInput.text.toString().toIntOrNull() ?: book.year,
-                    pages = pagesInput.text.toString().toIntOrNull() ?: book.pages,
-                    price = priceInput.text.toString().toDoubleOrNull() ?: book.price
-                )
+            .setPositiveButton("Сохранить") { dialog, _ ->
 
-                // заменяем книгу
-                val index = books.indexOfFirst { it.id == book.id }
-                if (index != -1) {
-                    books[index] = updated
+                val title = titleInput.text?.toString().orEmpty()
+                val author = authorInput.text?.toString().orEmpty()
+                val genre = genreInput.text?.toString().orEmpty()
+                val yearText = yearInput.text?.toString().orEmpty()
+                val pagesText = pagesInput.text?.toString().orEmpty()
+                val priceText = priceInput.text?.toString().orEmpty()
+
+                val errorMessages = mutableListOf<String>()
+
+                val year = yearText.toIntOrNull()?.takeIf { it in 1564..2025 } ?: run {
+                    errorMessages.add(getString(R.string.error_year))
+                    null
                 }
-                repository.saveBooks(books)
-                applyCurrentFilter()
+                val pages = pagesText.toIntOrNull()?.takeIf { it in 1..100100 } ?: run {
+                    errorMessages.add(getString(R.string.error_pages))
+                    null
+                }
+                val price = priceText.toDoubleOrNull()?.takeIf { it in 0.0..2385768000.0 } ?: run {
+                    errorMessages.add(getString(R.string.error_price))
+                    null
+                }
+
+                if (title.isBlank()) errorMessages.add(getString(R.string.error_title))
+                if (author.isBlank()) errorMessages.add(getString(R.string.error_author))
+                if (genre.isBlank()) errorMessages.add(getString(R.string.error_genre))
+
+                if (errorMessages.isNotEmpty() || year == null || pages == null || price == null) {
+                    AlertDialog.Builder(this)
+                        .setTitle(R.string.error_title_common)
+                        .setMessage(errorMessages.joinToString("\n"))
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show()
+                } else {
+                    val updated = book.copy(
+                        title = title,
+                        author = author,
+                        genre = genre,
+                        year = year,
+                        pages = pages,
+                        price = price
+                    )
+
+                    val index = books.indexOfFirst { it.id == book.id }
+                    if (index != -1) {
+                        books[index] = updated
+                    }
+                    repository.saveBooks(books)
+                    applyCurrentFilter()
+                }
+
+                dialog.dismiss()
             }
             .setNegativeButton("Отмена", null)
             .setNeutralButton("Удалить") { _, _ ->
@@ -261,8 +297,7 @@ class MainActivity : AppCompatActivity() {
                 repository.saveBooks(books)
                 applyCurrentFilter()
             }
-            .create()
-        dialog.show()
+            .show()
     }
 
     private fun saveCsvToUri(uri: android.net.Uri) {
